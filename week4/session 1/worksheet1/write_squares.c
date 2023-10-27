@@ -13,8 +13,8 @@ int main()
     scanf("How many numbers? ", n);
     for(int i; i <= n; i++)
     {
-        fprintf(file, "")
+        int square = i^2
+        fprintf(file, "%d\n", square);
     }
-
-
+    return 0;
 }
