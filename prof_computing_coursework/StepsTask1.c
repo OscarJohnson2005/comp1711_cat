@@ -65,7 +65,7 @@ int main() {
         totalRecords++;
     }
 
-    fseek(file, 0, SEEK_SET); // resets the reading position to zero
+    fseek(file, 0, SEEK_SET); // resets the reading position to zero. seek_set sets the pointer at the start of the file
 
     // read data from csv lines 1, 2, 3, write this to fitDataArray.
     while(fgets(line_buffer, sizeof(line_buffer), file) != NULL && recordCount < 3)
