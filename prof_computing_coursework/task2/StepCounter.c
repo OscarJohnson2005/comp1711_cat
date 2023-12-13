@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "FitnessDataStruct.h"
 
 // Struct moved to header file
@@ -26,7 +27,7 @@ void menu()
 void import()
 {
     printf("Filename: ");
-    scanf("%s", filename);
+    scanf(" %s", filename);
     FILE *file = fopen(filename, "r");
     if(file == NULL)
     {
@@ -133,8 +134,9 @@ void findMeanSteps()
         totalSteps += FITNESS_DATA_ARRAY[i].steps;
     }
 
-    int meanSteps = totalSteps/recordCount;
-    printf("Mean step count: %d\n", meanSteps);
+    double meanSteps = (double)totalSteps/recordCount;
+    int roundedMeanSteps = round(meanSteps);
+    printf("Mean step count: %d\n", roundedMeanSteps);
 }
 
 void findLongestAbove500()
